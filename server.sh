@@ -18,7 +18,7 @@ add)
 ./add.sh "${request[2]}" "${request[3]}" &> $clientpipe ;;
 
 post)
-./post.sh "${request[2]}" "${request[3]}" "$(echo${request[4]})" &> $clientpipe ;;
+./post.sh "${request[2]}" "${request[3]}" "$(echo ${request[@]:4})" &> $clientpipe ;;
 
 show)
 ./show.sh "${request[2]}" &> $clientpipe ;;
