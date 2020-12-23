@@ -13,7 +13,7 @@ if [ ! -d "$receiver" ]; then
 	exit 2
 elif [ ! -d "$sender" ]; then
 	echo "Error: sender does not exist">&2
-	exit 3
+	exit 2
 fi
 
 ./P.sh "$receiver"
@@ -25,7 +25,7 @@ if grep -Fxq "$sender" "$receiver/friends"; then
 else
 	echo "Error: '$sender' is not a friend of '$receiver'">&2
 	./V.sh "$receiver"
-	exit 4
+	exit 1
 fi
 #./V.sh "$reciever"
 exit 0

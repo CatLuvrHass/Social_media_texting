@@ -21,7 +21,7 @@ if [[ "$req" -eq create ]]; then
 	echo "$id $req $user $friend $message">$serverpipe
 
 elif [[ "$req" -eq add ]]; then
-	echo "$id $req $user $friend $message">$serverpipe
+	echo "$id $req $user $friend $message">$serverpip
 
 elif [[ "$req" -eq post ]]; then
 	echo "$id $req $user $friend $message">$serverpipe
@@ -32,10 +32,10 @@ elif [[ "$req" -eq show ]]; then
 elif [[ "$req" -eq shutdown ]]; then
 	echo "$id $req">$serverpipe
 fi
-
 #read output from serverpipe
 while read output; do
 	echo "$output"
 done<$clientpipe
 
 rm $clientpipe
+exit 0

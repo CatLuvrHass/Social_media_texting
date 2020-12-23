@@ -27,10 +27,12 @@ shutdown)
 echo "shutting" &> $clientpipe
 rm $serverpipe
 exit 0 ;;
+
 *)
 echo 'Error: bad request'
 rm $serverpipe
-exit 1;;
+exit 1 ;;
+
 esac
 done
 rm $serverpipe

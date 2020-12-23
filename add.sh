@@ -11,14 +11,14 @@ if [ ! -d "$user" ]; then
 	exit 2
 elif [ ! -d "$friend" ]; then
 	echo 'Error: friend does not exist'>&2
-	exit 3
+	exit 2
 fi
 
 ./P.sh "$user"
 if grep -Fxq "$friend" "$user/friends"; then
 	echo "Error: user already friends with this user">&2
 	./V.sh "$user"
-	exit 4
+	exit 1
 else
 	echo "$friend" >> "$user/friends"
 	echo "Ok: friend added"
